@@ -2,9 +2,9 @@
 
 > *Master your technical interviews with an adaptive, context-aware AI opponent.*
 
-<div align="center">
-  <img width="1914" height="951" alt="image" src="https://github.com/user-attachments/assets/072dc78e-a766-4b08-9429-2df0645c3825" />
 
+<div align="center">
+  <img width="100%" alt="Nexus AI Interviewer Demo" src="https://github.com/user-attachments/assets/072dc78e-a766-4b08-9429-2df0645c3825" />
 </div>
 
 <div align="center">
@@ -52,10 +52,34 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 - **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS v4, Framer Motion (for fluid animations).
 - **UI Components**: Shadcn/UI for a premium, accessible design system.
-- **Backend**: Node.js & Express (Separate Service).
+- **Backend**: Node.js & Express (Separate Service) handling complex logic.
 - **AI Engine**: Google Gemini 1.5 Flash / 3.0 Flash Preview via the Google GenAI SDK.
 - **Database**: MongoDB Atlas (Mongoose ODM) for storing session history and analytics.
 - **Deployment**: Dockerized for easy deployment to Vercel or Render.
+
+## 🚧 Challenges I Ran Into
+
+- **Real-time Latency**: Ensuring the voice interaction felt natural required optimizing the API calls to Gemini and the browser's speech recognition.
+- **Prompt Engineering**: Creating an AI persona ("Alex") that could push back on candidates without being rude was a delicate balance of system instructions.
+- **Full Stack Integration**: Coordinating state between a Next.js frontend and a separate Express backend while managing a unified user experience.
+
+## 🏅 Accomplishments That I'm Proud Of
+
+- **Seamless Voice UI**: I achieved a near-conversational latency that makes the interview feel real.
+- **Dynamic Report Generation**: The post-interview analysis is genuinely helpful, offering specific actionable feedback rather than generic advice.
+- **Clean Architecture**: Successfully implementing a decoupled Full Stack architecture.
+
+## 🧠 What I Learned
+
+- **Gemini's Capabilities**: I pushed the limits of Gemini 1.5 Flash's context window to maintain long interview history.
+- **Modern React Patterns**: Deepened my understanding of React 19 features and Next.js App Router patterns.
+- **Microservices Deployment**: Learned the intricacies of deploying separate frontend and backend services to different providers (Vercel & Render).
+
+## 🔮 What's Next for Nexus AI
+
+- **Video Analysis**: Using Gemini's multimodal capabilities to analyze body language via webcam.
+- **Code Execution Environment**: Adding a live coding sandbox for technical questions.
+- **Custom Personas**: Allowing users to choose between "Friendly HR", "Strict CTO", or "Neutral Peer".
 
 ## ⚡ Getting Started
 
@@ -69,6 +93,7 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 #### 1. Backend Setup
 ```bash
+git clone https://github.com/sahildk/ai-interviewer.git
 cd ai-interviewer/server
 npm install
 # Create .env file with MONGO_URI, API_KEY, PORT=5000
@@ -93,7 +118,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for a detailed step-by-step guide on deployin
 - [Frontend Deployment (Vercel)](DEPLOYMENT.md#frontend-deployment-vercel)
 - [Docker Deployment](DEPLOYMENT.md#docker-deployment-optional)
 
-## 👥 Team
+## 👤 Author
 
 - **Sahil Deore** - *Full Stack Developer*
 
