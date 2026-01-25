@@ -8,9 +8,58 @@
 </div>
 
 <div align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nextjs,react,tailwind,nodejs,express,mongodb,docker,gcp&theme=dark" />
-  </a>
+  <table>
+    <tr>
+      <td align="center" width="96">
+        <a href="https://nextjs.org">
+          <img src="https://skillicons.dev/icons?i=nextjs&theme=dark" width="48" height="48" alt="Next.js" />
+        </a>
+        <br>Next.js
+      </td>
+      <td align="center" width="96">
+        <a href="https://react.dev">
+          <img src="https://skillicons.dev/icons?i=react&theme=dark" width="48" height="48" alt="React" />
+        </a>
+        <br>React
+      </td>
+      <td align="center" width="96">
+        <a href="https://tailwindcss.com">
+          <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" width="48" height="48" alt="Tailwind" />
+        </a>
+        <br>Tailwind
+      </td>
+      <td align="center" width="96">
+        <a href="https://nodejs.org">
+          <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" width="48" height="48" alt="Node.js" />
+        </a>
+        <br>Node.js
+      </td>
+      <td align="center" width="96">
+        <a href="https://expressjs.com">
+          <img src="https://skillicons.dev/icons?i=express&theme=dark" width="48" height="48" alt="Express" />
+        </a>
+        <br>Express
+      </td>
+      <td align="center" width="96">
+        <a href="https://www.mongodb.com">
+          <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" width="48" height="48" alt="MongoDB" />
+        </a>
+        <br>MongoDB
+      </td>
+      <td align="center" width="96">
+        <a href="https://ai.google.dev">
+          <img src="https://skillicons.dev/icons?i=gcp&theme=dark" width="48" height="48" alt="Gemini" />
+        </a>
+        <br>Gemini
+      </td>
+      <td align="center" width="96">
+        <a href="https://www.docker.com">
+          <img src="https://skillicons.dev/icons?i=docker&theme=dark" width="48" height="48" alt="Docker" />
+        </a>
+        <br>Docker
+      </td>
+    </tr>
+  </table>
 </div>
 
 ## 💡 Inspiration
