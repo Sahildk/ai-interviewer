@@ -1,12 +1,18 @@
-# Nexus AI Interviewer 🤖💼
+# <div align="center">Nexus AI Interviewer 🤖💼</div>
 
-> *Master your technical interviews with an adaptive, context-aware AI opponent.*
+<div align="center">
+  <em>Master your technical interviews with an adaptive, context-aware AI opponent.</em>
+</div>
 
+<br />
 
 <div align="center">
   <img width="100%" alt="Nexus AI Interviewer Demo" src="https://github.com/user-attachments/assets/072dc78e-a766-4b08-9429-2df0645c3825" />
 </div>
 
+<br />
+
+<!-- Tech Stack -->
 <div align="center">
   <table>
     <tr>
@@ -62,59 +68,120 @@
   </table>
 </div>
 
-## 💡 Inspiration
+<br />
 
-Technical interviews are daunting. Most candidates struggle not with knowledge, but with articulation and pressure handling. Existing mock interview platforms are either static, expensive, or lack realistic conversational flow. 
+<!-- Deploy Buttons -->
+<div align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsahildk%2Fai-interviewer">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://render.com/deploy">
+    <img src="https://img.shields.io/badge/Deploy%20to-Render-46E3B7?style=for-the-badge&logo=render" height="32" alt="Deploy to Render" />
+  </a>
+</div>
 
-**Nexus AI** bridges this gap by leveraging the latest **Gemini 3.0** models to create a hyper-realistic, voice-enabled interview simulation that adapts to your specific resume and difficulty level.
+<br />
+<br />
 
-## 🚀 Key Features
+<div align="center">
+  <h2>💡 Inspiration</h2>
+</div>
 
-- **🧠 Adaptive AI Persona**: "Alex", the interviewer, isn't just a chatbot. He adapts his tone, follow-up questions, and pressure based on your responses.
-- **🗣️ Voice-First Interaction**: Full speech-to-text and text-to-speech integration for a realistic "out loud" interview experience.
-- **📄 Resume Context**: Paste your resume or job description, and the AI generates tailored questions relevant to your actual target role.
-- **📊 Detailed Analytics**: Get a comprehensive post-interview report card grading you on:
-    - Technical Accuracy
-    - Communication Clarity
-    - Culture Fit
-- **🕸️ Full-Stack Architecture**: A modern Microservices-ready architecture with a **Next.js Frontend** and a robust **Node.js/Express Backend**.
+> Technical interviews are daunting. Most candidates struggle not with knowledge, but with articulation and pressure handling. Existing mock interview platforms are either static, expensive, or lack realistic conversational flow.
+> 
+> **Nexus AI** bridges this gap by leveraging the latest **Gemini 3.0** models to create a hyper-realistic, voice-enabled interview simulation that adapts to your specific resume and difficulty level.
 
-## 🛠️ How it's Built
+<br />
+
+---
+
+<div align="center">
+  <h2>🚀 Key Features</h2>
+</div>
+
+<br />
+
+| Feature | Description |
+| :--- | :--- |
+| **🧠 Adaptive AI Persona** | "Alex", the interviewer, adapts his tone, follow-up questions, and pressure based on your responses. |
+| **🗣️ Voice-First Interaction** | Full speech-to-text and text-to-speech integration for a realistic "out loud" interview experience. |
+| **📄 Resume Context** | Paste your resume or job description, and the AI generates tailored questions relevant to your actual target role. |
+| **📊 Detailed Analytics** | Get a comprehensive post-interview report card grading you on Technical Accuracy, Communication Clarity, and Culture Fit. |
+| **🕸️ Full-Stack Architecture** | A modern Microservices-ready architecture with a **Next.js Frontend** and a robust **Node.js/Express Backend**. |
+
+<br />
+
+---
+
+<div align="center">
+  <h2>🛠️ How it's Built</h2>
+</div>
 
 This project was built for the Hackathon using a modern, scalable stack:
 
-- **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS v4, Framer Motion (for fluid animations).
-- **UI Components**: Shadcn/UI for a premium, accessible design system.
-- **Backend**: Node.js & Express (Separate Service) handling complex logic.
-- **AI Engine**: Google Gemini 1.5 Flash / 3.0 Flash Preview via the Google GenAI SDK.
-- **Database**: MongoDB Atlas (Mongoose ODM) for storing session history and analytics.
+- **Frontend**: `Next.js 15` (App Router), `React 19`, `Tailwind CSS v4`, `Framer Motion` (for fluid animations).
+- **UI Components**: `Shadcn/UI` for a premium, accessible design system.
+- **Backend**: `Node.js` & `Express` (Separate Service) handling complex logic.
+- **AI Engine**: `Google Gemini 1.5 Flash` / `3.0 Flash Preview` via the Google GenAI SDK.
+- **Database**: `MongoDB Atlas` (Mongoose ODM) for storing session history and analytics.
 - **Deployment**: Dockerized for easy deployment to Vercel or Render.
 
-## 🚧 Challenges I Ran Into
+<br />
+
+---
+
+<div align="center">
+  <h2>🚧 Challenges I Ran Into</h2>
+</div>
 
 - **Real-time Latency**: Ensuring the voice interaction felt natural required optimizing the API calls to Gemini and the browser's speech recognition.
 - **Prompt Engineering**: Creating an AI persona ("Alex") that could push back on candidates without being rude was a delicate balance of system instructions.
 - **Full Stack Integration**: Coordinating state between a Next.js frontend and a separate Express backend while managing a unified user experience.
 
-## 🏅 Accomplishments That I'm Proud Of
+<br />
+
+---
+
+<div align="center">
+  <h2>🏅 Accomplishments That I'm Proud Of</h2>
+</div>
 
 - **Seamless Voice UI**: I achieved a near-conversational latency that makes the interview feel real.
 - **Dynamic Report Generation**: The post-interview analysis is genuinely helpful, offering specific actionable feedback rather than generic advice.
 - **Clean Architecture**: Successfully implementing a decoupled Full Stack architecture.
 
-## 🧠 What I Learned
+<br />
+
+---
+
+<div align="center">
+  <h2>🧠 What I Learned</h2>
+</div>
 
 - **Gemini's Capabilities**: I pushed the limits of Gemini 1.5 Flash's context window to maintain long interview history.
 - **Modern React Patterns**: Deepened my understanding of React 19 features and Next.js App Router patterns.
 - **Microservices Deployment**: Learned the intricacies of deploying separate frontend and backend services to different providers (Vercel & Render).
 
-## 🔮 What's Next for Nexus AI
+<br />
 
-- **Video Analysis**: Using Gemini's multimodal capabilities to analyze body language via webcam.
-- **Code Execution Environment**: Adding a live coding sandbox for technical questions.
-- **Custom Personas**: Allowing users to choose between "Friendly HR", "Strict CTO", or "Neutral Peer".
+---
 
-## ⚡ Getting Started
+<div align="center">
+  <h2>🔮 What's Next for Nexus AI</h2>
+</div>
+
+- [ ] **Video Analysis**: Using Gemini's multimodal capabilities to analyze body language via webcam.
+- [ ] **Code Execution Environment**: Adding a live coding sandbox for technical questions.
+- [ ] **Custom Personas**: Allowing users to choose between "Friendly HR", "Strict CTO", or "Neutral Peer".
+
+<br />
+
+---
+
+<div align="center">
+  <h2>⚡ Getting Started</h2>
+</div>
 
 ### Prerequisites
 
@@ -124,7 +191,9 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 ### Installation
 
-#### 1. Backend Setup
+<details>
+<summary><strong>1. Backend Setup</strong> (Click to expand)</summary>
+
 ```bash
 git clone https://github.com/sahildk/ai-interviewer.git
 cd ai-interviewer/server
@@ -132,8 +201,11 @@ npm install
 # Create .env file with MONGO_URI, API_KEY, PORT=5000
 npm start
 ```
+</details>
 
-#### 2. Frontend Setup
+<details>
+<summary><strong>2. Frontend Setup</strong> (Click to expand)</summary>
+
 ```bash
 cd ai-interviewer/frontend
 npm install
@@ -141,20 +213,48 @@ npm install
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+</details>
 
-## 🐳 Deployment
+<br />
+
+---
+
+<div align="center">
+  <h2>🐳 Deployment</h2>
+</div>
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for a detailed step-by-step guide on deploying both the Frontend and Backend.
 
-**Quick Links:**
-- [Backend Deployment (Render)](DEPLOYMENT.md#backend-deployment-rendercom)
-- [Frontend Deployment (Vercel)](DEPLOYMENT.md#frontend-deployment-vercel)
-- [Docker Deployment](DEPLOYMENT.md#docker-deployment-optional)
+| Service | Platform | Link |
+| :--- | :--- | :--- |
+| **Backend** | Render | [Guide](DEPLOYMENT.md#backend-deployment-rendercom) |
+| **Frontend** | Vercel | [Guide](DEPLOYMENT.md#frontend-deployment-vercel) |
+| **Container** | Docker | [Guide](DEPLOYMENT.md#docker-deployment-optional) |
 
-## 👤 Author
+<br />
 
-- **Sahil Deore** - *Full Stack Developer*
+---
 
-## 📄 License
+<div align="center">
+  <h2>👤 Author</h2>
+</div>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<div align="center">
+  <strong>Sahil Deore</strong>
+  <br />
+  <em>Full Stack Developer | Hackathon Enthusiast</em>
+  <br />
+  <br />
+  <a href="https://github.com/sahildk">
+    <img src="https://img.shields.io/github/followers/sahildk?style=social" alt="GitHub Followers" />
+  </a>
+</div>
+
+<br />
+
+---
+
+<div align="center">
+  <p>Licensed under the MIT License.</p>
+  <p>Made with ❤️ during the Hackathon.</p>
+</div>
