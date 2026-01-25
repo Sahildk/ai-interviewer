@@ -15,6 +15,25 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Nexus AI Interviewer",
   description: "Advanced AI Technical Interview Simulator",
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
+  openGraph: {
+    title: "Nexus AI Interviewer",
+    description: "Master your technical interviews with an adaptive, context-aware AI opponent.",
+    siteName: 'Nexus AI',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1024,
+        height: 1024,
+        alt: 'Nexus AI Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
