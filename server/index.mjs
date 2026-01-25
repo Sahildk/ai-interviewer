@@ -3,18 +3,14 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-import { GoogleGenAI } from '@google/genai';
-import dns from 'dns';
-
-dns.setDefaultResultOrder('ipv4first');
-
 import { fileURLToPath } from 'url';
 import path from 'path';
+import https from 'https';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: path.join(__dirname, '.env') });
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -52,9 +48,7 @@ const interviewSchema = new mongoose.Schema({
 
 const Interview = mongoose.model('Interview', interviewSchema);
 
-import https from 'https';
-
-const GEMINI_API_KEY = process.env.API_KEY?.trim();
+const GEMINI_API_KEY = process.env.API_KEY || process.env.GEMINI_API_KEY;
 const MODEL_NAME = 'gemini-3-flash-preview'; 
 console.log(`Active Model: ${MODEL_NAME}`);
 
@@ -302,6 +296,3 @@ app.post('/api/report', async (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
-
-

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, MicOff, Send, Volume2, VolumeX, User, Bot, StopCircle, RefreshCw, MessageSquare } from 'lucide-react';
+import { Mic, MicOff, Send, Volume2, VolumeX, User, Bot, StopCircle } from 'lucide-react';
 import { Message, InterviewConfig } from '@/types';
 
 interface ChatInterfaceProps {
@@ -25,7 +25,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Derive current question (last message from model)
-  const currentQuestion = messages.slice().reverse().find(m => m.role === 'model')?.text || "Initializing interview...";
+  // const currentQuestion = messages.slice().reverse().find(m => m.role === 'model')?.text || "Initializing interview...";
 
   // Scroll to bottom on new message
   useEffect(() => {
@@ -35,6 +35,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   // Handle Speech Recognition (Native Browser API)
   const startListening = () => {
     if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
       const recognition = new SpeechRecognition();
       recognition.continuous = false;
@@ -43,6 +44,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
       recognition.onstart = () => setIsRecording(true);
       recognition.onend = () => setIsRecording(false);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       recognition.onresult = (event: any) => {
         const transcript = event.results[0][0].transcript;
         setInputValue(transcript);
@@ -91,7 +93,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
          window.speechSynthesis.speak(utterance);
        }, 500);
     }
-  }, [messages.length, isAudioEnabled]);
+  }, [messages, isAudioEnabled]);
 
   return (
     <div className="h-screen flex flex-col md:flex-row bg-slate-950 text-slate-100 overflow-hidden relative w-full">

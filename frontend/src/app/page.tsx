@@ -15,12 +15,14 @@ export default function Home() {
   
   const sessionIdRef = useRef<string | null>(null);
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
   const handleStartInterview = async (newConfig: InterviewConfig) => {
     setIsProcessing(true);
     setConfig(newConfig);
     
     try {
-      const response = await fetch('/api/start', {
+      const response = await fetch(`${API_URL}/api/start`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ config: newConfig }),
@@ -44,9 +46,9 @@ export default function Home() {
       
       setMessages([initialMsg]);
       setStage(AppStage.INTERVIEW);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Failed to start", error);
-      alert(`Failed to initialize AI session: ${error.message}`);
+      alert(`Failed to initialize AI session: ${(error as Error).message}`);
     } finally {
       setIsProcessing(false);
     }
@@ -65,7 +67,7 @@ export default function Home() {
     setIsProcessing(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId: sessionIdRef.current, message: text }),
@@ -96,7 +98,7 @@ export default function Home() {
     setIsProcessing(true);
     
     try {
-      const response = await fetch('/api/report', {
+      const response = await fetch(`${API_URL}/api/report`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId: sessionIdRef.current }),

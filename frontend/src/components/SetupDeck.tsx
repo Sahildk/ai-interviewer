@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Settings, Code, Users, Cpu, FileText, ArrowRight, Loader2 } from 'lucide-react';
+import { Code, Users, Cpu, FileText, ArrowRight, Loader2 } from 'lucide-react';
 import { InterviewConfig, InterviewType } from '@/types';
 
 interface SetupDeckProps {
@@ -96,7 +96,7 @@ const SetupDeck: React.FC<SetupDeckProps> = ({ onStart, isLoading }) => {
               {['junior', 'mid', 'senior'].map((level) => (
                 <button
                   key={level}
-                  onClick={() => setDifficulty(level as any)}
+                  onClick={() => setDifficulty(level as 'junior' | 'mid' | 'senior')}
                   className={`flex-1 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
                     difficulty === level
                       ? 'bg-slate-700 text-white shadow-sm'

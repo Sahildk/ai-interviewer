@@ -46,7 +46,7 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 - **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS v4, Framer Motion (for fluid animations).
 - **UI Components**: Shadcn/UI for a premium, accessible design system.
-- **Backend**: Next.js API Routes (Serverless functions) handling secure API calls.
+- **Backend**: Node.js & Express (Separate Service).
 - **AI Engine**: Google Gemini 1.5 Flash / 3.0 Flash Preview via the Google GenAI SDK.
 - **Database**: MongoDB Atlas (Mongoose ODM) for storing session history and analytics.
 - **Deployment**: Dockerized for easy deployment to Vercel or Render.
@@ -61,42 +61,31 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 ### Installation
 
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/sahildk/ai-interviewer.git
-    cd ai-interviewer/frontend
-    ```
+#### 1. Backend Setup
+```bash
+cd ai-interviewer/server
+npm install
+# Create .env file with MONGO_URI, API_KEY, PORT=5000
+npm start
+```
 
-2.  **Install Dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Configure Environment**
-    Create a `.env.local` file in the `frontend` directory:
-    ```env
-    GEMINI_API_KEY=your_gemini_api_key_here
-    MONGO_URI=your_mongodb_connection_string
-    ```
-
-4.  **Run Locally**
-    ```bash
-    npm run dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) in your browser.
+#### 2. Frontend Setup
+```bash
+cd ai-interviewer/frontend
+npm install
+# Create .env.local with NEXT_PUBLIC_API_URL=http://localhost:5000
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🐳 Deployment
 
-The project includes a production-ready `Dockerfile`.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for a detailed step-by-step guide on deploying both the Frontend and Backend.
 
-**Deploy with Vercel:**
-Simply import the repo into Vercel. The `vercel.json` configuration ensures seamless deployment.
-
-**Deploy with Docker:**
-```bash
-docker build -t nexus-ai .
-docker run -p 3000:3000 -e GEMINI_API_KEY=... -e MONGO_URI=... nexus-ai
-```
+**Quick Links:**
+- [Backend Deployment (Render)](DEPLOYMENT.md#backend-deployment-rendercom)
+- [Frontend Deployment (Vercel)](DEPLOYMENT.md#frontend-deployment-vercel)
+- [Docker Deployment](DEPLOYMENT.md#docker-deployment-optional)
 
 ## 👥 Team
 
