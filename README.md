@@ -113,9 +113,9 @@
 
 ---
 
-<div align="center">
+
   <h2>🛠️ How it's Built</h2>
-</div>
+
 
 This project was built for the Hackathon using a modern, scalable stack:
 
@@ -130,9 +130,9 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 ---
 
-<div align="center">
+
   <h2>🚧 Challenges I Ran Into</h2>
-</div>
+
 
 - **Real-time Latency**: Ensuring the voice interaction felt natural required optimizing the API calls to Gemini and the browser's speech recognition.
 - **Prompt Engineering**: Creating an AI persona ("Alex") that could push back on candidates without being rude was a delicate balance of system instructions.
@@ -142,9 +142,9 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 ---
 
-<div align="center">
+
   <h2>🏅 Accomplishments That I'm Proud Of</h2>
-</div>
+
 
 - **Seamless Voice UI**: I achieved a near-conversational latency that makes the interview feel real.
 - **Dynamic Report Generation**: The post-interview analysis is genuinely helpful, offering specific actionable feedback rather than generic advice.
@@ -154,9 +154,9 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 ---
 
-<div align="center">
+
   <h2>🧠 What I Learned</h2>
-</div>
+
 
 - **Gemini's Capabilities**: I pushed the limits of Gemini 1.5 Flash's context window to maintain long interview history.
 - **Modern React Patterns**: Deepened my understanding of React 19 features and Next.js App Router patterns.
@@ -166,9 +166,9 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 ---
 
-<div align="center">
+
   <h2>🔮 What's Next for Nexus AI</h2>
-</div>
+
 
 - [ ] **Video Analysis**: Using Gemini's multimodal capabilities to analyze body language via webcam.
 - [ ] **Code Execution Environment**: Adding a live coding sandbox for technical questions.
@@ -178,9 +178,9 @@ This project was built for the Hackathon using a modern, scalable stack:
 
 ---
 
-<div align="center">
-  <h2>⚡ Getting Started</h2>
-</div>
+
+<h2>⚡ Getting Started</h2>
+
 
 ### Prerequisites
 
@@ -218,9 +218,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-<div align="center">
+
   <h2>🐳 Deployment</h2>
-</div>
+
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for a detailed step-by-step guide on deploying both the Frontend and Backend.
 
