@@ -75,7 +75,6 @@
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsahildk%2Fai-interviewer">
     <img src="https://vercel.com/button" alt="Deploy with Vercel" />
   </a>
-  &nbsp;&nbsp;
   <a href="https://render.com/deploy">
     <img src="https://img.shields.io/badge/Deploy%20to-Render-46E3B7?style=for-the-badge&logo=render" height="32" alt="Deploy to Render" />
   </a>
