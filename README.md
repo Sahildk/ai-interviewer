@@ -3,8 +3,8 @@
 > *Master your technical interviews with an adaptive, context-aware AI opponent.*
 
 <div align="center">
-  <img src="<img width="1914" height="951" alt="image" src="https://github.com/user-attachments/assets/c6b36f45-d22b-449c-8d1c-3d0579120a31" />
-" alt="Nexus AI Dashboard" width="100%" />
+  <img width="1914" height="951" alt="image" src="https://github.com/user-attachments/assets/072dc78e-a766-4b08-9429-2df0645c3825" />
+
 </div>
 
 <div align="center">
