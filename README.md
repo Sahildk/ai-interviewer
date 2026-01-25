@@ -21,6 +21,12 @@
   <a href="https://www.mongodb.com/">
     <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />
   </a>
+  <a href="https://nodejs.org/">
+    <img src="https://img.shields.io/badge/Node.js-v18-339933?style=for-the-badge&logo=node.js" alt="Node.js" />
+  </a>
+  <a href="https://expressjs.com/">
+    <img src="https://img.shields.io/badge/Express.js-v4-000000?style=for-the-badge&logo=express" alt="Express.js" />
+  </a>
 </div>
 
 ## 💡 Inspiration
@@ -38,7 +44,7 @@ Technical interviews are daunting. Most candidates struggle not with knowledge, 
     - Technical Accuracy
     - Communication Clarity
     - Culture Fit
-- **🕸️ Full-Stack Architecture**: Built with a production-ready Next.js 15 App Router structure, utilizing Server Actions and API routes for security and speed.
+- **🕸️ Full-Stack Architecture**: A modern Microservices-ready architecture with a **Next.js Frontend** and a robust **Node.js/Express Backend**.
 
 ## 🛠️ How it's Built
 
