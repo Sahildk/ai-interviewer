@@ -1,0 +1,7 @@
+{
+  "name": "Nexus Interview AI",
+  "description": "A futuristic, adaptive AI mock interviewer that evaluates technical skills and behavioral responses in real-time.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
