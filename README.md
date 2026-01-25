@@ -8,27 +8,8 @@
 </div>
 
 <div align="center">
-  <br />
-  <a href="https://nextjs.org">
-    <img src="https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js" alt="Next.js" />
-  </a>
-  <a href="https://tailwindcss.com">
-    <img src="https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" />
-  </a>
-  <a href="https://ai.google.dev/">
-    <img src="https://img.shields.io/badge/Gemini-3.0_Flash-8E75B2?style=for-the-badge&logo=google" alt="Gemini AI" />
-  </a>
-  <a href="https://www.mongodb.com/">
-    <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />
-  </a>
-  <a href="https://nodejs.org/">
-    <img src="https://img.shields.io/badge/Node.js-v18-339933?style=for-the-badge&logo=node.js" alt="Node.js" />
-  </a>
-  <a href="https://expressjs.com/">
-    <img src="https://img.shields.io/badge/Express.js-v4-000000?style=for-the-badge&logo=express" alt="Express.js" />
-  </a>
-  <a href="https://www.docker.com/">
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=nextjs,react,tailwind,nodejs,express,mongodb,docker,gcp&theme=dark" />
   </a>
 </div>
 
