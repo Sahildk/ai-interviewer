@@ -158,7 +158,7 @@ This project was built for the Hackathon using a modern, scalable stack:
   <h2>🧠 What I Learned</h2>
 
 
-- **Gemini's Capabilities**: I pushed the limits of Gemini 1.5 Flash's context window to maintain long interview history.
+- **Gemini's Capabilities**: I pushed the limits of Gemini 3.0 Flash's context window to maintain long interview history.
 - **Modern React Patterns**: Deepened my understanding of React 19 features and Next.js App Router patterns.
 - **Microservices Deployment**: Learned the intricacies of deploying separate frontend and backend services to different providers (Vercel & Render).
 
