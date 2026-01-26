@@ -49,7 +49,15 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({ report, onReset }) =>
              <button onClick={onReset} className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors text-sm">
                 <Home size={16} /> Dashboard
              </button>
-             <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-colors text-sm font-medium">
+             <button 
+               onClick={() => {
+                 const text = `I just scored ${report.overallScore}/100 on my mock interview with Nexus AI!\n\nTechnical: ${report.technicalScore}\nCommunication: ${report.communicationScore}\nCulture Fit: ${report.cultureFitScore}\n\n${report.summary}`;
+                 navigator.clipboard.writeText(text);
+                 // Simple visual feedback could be added here, but for now we'll just rely on the action
+                 alert("Report summary copied to clipboard!");
+               }}
+               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-colors text-sm font-medium"
+             >
                 <Share2 size={16} /> Share
              </button>
           </div>

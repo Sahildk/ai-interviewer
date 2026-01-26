@@ -5,17 +5,18 @@ import { InterviewConfig, InterviewType } from '@/types';
 
 interface SetupDeckProps {
   onStart: (config: InterviewConfig) => void;
+  onError: (message: string) => void;
   isLoading: boolean;
 }
 
-const SetupDeck: React.FC<SetupDeckProps> = ({ onStart, isLoading }) => {
+const SetupDeck: React.FC<SetupDeckProps> = ({ onStart, onError, isLoading }) => {
   const [type, setType] = useState<InterviewType>('technical');
   const [context, setContext] = useState('');
   const [difficulty, setDifficulty] = useState<'junior' | 'mid' | 'senior'>('mid');
 
   const handleSubmit = () => {
     if (!context.trim()) {
-      alert("Please paste your resume or a job description to give the AI context.");
+      onError("Please paste your resume or a job description to give the AI context.");
       return;
     }
     onStart({ type, context, difficulty });

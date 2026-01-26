@@ -7,6 +7,7 @@ interface ChatInterfaceProps {
   messages: Message[];
   onSendMessage: (text: string) => void;
   onEndInterview: () => void;
+  onError: (message: string) => void;
   config: InterviewConfig;
   isProcessing: boolean;
 }
@@ -15,6 +16,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   messages, 
   onSendMessage, 
   onEndInterview, 
+  onError,
   config,
   isProcessing 
 }) => {
@@ -52,7 +54,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
       recognition.onerror = () => setIsRecording(false);
       recognition.start();
     } else {
-      alert("Browser does not support Speech Recognition.");
+      onError("Browser does not support Speech Recognition. Please use Chrome.");
     }
   };
 
