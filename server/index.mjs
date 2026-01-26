@@ -58,7 +58,7 @@ const interviewSchema = new mongoose.Schema({
 const Interview = mongoose.model('Interview', interviewSchema);
 
 const GEMINI_API_KEY = process.env.API_KEY || process.env.GEMINI_API_KEY;
-const MODEL_NAME = 'gemini-3-flash-preview'; 
+const MODEL_NAME = 'gemini-2.5-flash'; 
 console.log(`Active Model: ${MODEL_NAME}`);
 
 // Helper for Google API Calls
