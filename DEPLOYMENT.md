@@ -17,6 +17,7 @@ This guide covers the deployment of the **AI Interviewer** as a proper **Full St
 |----------|-------------|
 | `MONGO_URI` | Connection string for MongoDB. |
 | `API_KEY` | Google Gemini API Key. |
+| `FRONTEND_URL` | Your Vercel frontend URL (e.g. `https://your-app.vercel.app`) — used to restrict CORS. |
 | `PORT` | `5000` (Optional/Default). |
 
 ### Frontend Secrets (for Vercel)
@@ -39,7 +40,7 @@ We need to deploy the backend first to get the URL for the frontend.
     -   **Build Command:** `npm install`
     -   **Start Command:** `npm start`
 6.  **Environment Variables:**
-    -   Add `MONGO_URI` and `API_KEY`.
+    -   Add `MONGO_URI`, `API_KEY`, and `FRONTEND_URL` (your Vercel URL from Step 2 — go back and add this after deploying frontend).
 7.  **Deploy**.
 8.  **Copy the Service URL** (e.g., `https://ai-interviewer-backend.onrender.com`). You will need this for the frontend.
 
@@ -66,7 +67,11 @@ We need to deploy the backend first to get the URL for the frontend.
 ```bash
 cd server
 docker build -t ai-backend .
-docker run -p 5000:5000 -e MONGO_URI="..." -e API_KEY="..." ai-backend
+docker run -p 5000:5000 \
+  -e MONGO_URI="mongodb+srv://..." \
+  -e API_KEY="your_key_here" \
+  -e FRONTEND_URL="http://localhost:3000" \
+  ai-backend
 ```
 
 ### Frontend

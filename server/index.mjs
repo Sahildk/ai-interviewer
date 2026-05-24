@@ -12,21 +12,37 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
+// --- Startup validation: fail fast if required env vars are missing ---
+const MONGO_URI = process.env.MONGO_URI;
+if (!MONGO_URI) {
+  console.error('FATAL: MONGO_URI environment variable is not set. Exiting.');
+  process.exit(1);
+}
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware - CORS configuration for cross-origin requests
+// Middleware - CORS configuration: only allow known origins
+const allowedOrigins = [
+  'http://localhost:3000',
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
 app.use(cors({
-  origin: true, // Allow all origins (or specify your Vercel URL)
+  origin: (origin, callback) => {
+    // Allow server-to-server calls (no origin) and listed origins
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS: Origin '${origin}' is not allowed.`));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// Handle preflight requests
-app.options('*', cors());
-
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '100kb' })); // Prevent oversized payload attacks
 
 // Log all requests
 app.use((req, res, next) => {
@@ -58,13 +74,19 @@ const interviewSchema = new mongoose.Schema({
 const Interview = mongoose.model('Interview', interviewSchema);
 
 const GEMINI_API_KEY = process.env.API_KEY || process.env.GEMINI_API_KEY;
-const MODEL_NAME = 'gemini-2.5-flash'; 
+if (!GEMINI_API_KEY) {
+  console.error('FATAL: GEMINI_API_KEY (or API_KEY) environment variable is not set. Exiting.');
+  process.exit(1);
+}
+const MODEL_NAME = 'gemini-2.5-flash';
 console.log(`Active Model: ${MODEL_NAME}`);
 
 // Helper for Google API Calls
+// NOTE: API key is sent as a request header, NOT a URL query param,
+// to prevent accidental logging of the key in server/proxy access logs.
 const callGemini = (endpoint, body) => {
   return new Promise((resolve, reject) => {
-    const url = `https://generativelanguage.googleapis.com/v1beta/${endpoint}?key=${GEMINI_API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/${endpoint}`;
     console.log(`[Gemini] Calling: ${endpoint}`);
     const data = JSON.stringify(body);
     
@@ -72,7 +94,8 @@ const callGemini = (endpoint, body) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(data)
+        'Content-Length': Buffer.byteLength(data),
+        'x-goog-api-key': GEMINI_API_KEY,  // Secure: key in header, not URL
       }
     };
 
@@ -158,7 +181,7 @@ app.post('/api/start', async (req, res) => {
     res.json({ sessionId: newInterview._id, firstMessage });
   } catch (error) {
     console.error('Error in /api/start:', error);
-    res.status(500).json({ error: 'Failed to start interview', details: error.message });
+    res.status(500).json({ error: 'Failed to start interview. Please try again.' });
   }
 });
 
@@ -171,6 +194,9 @@ app.post('/api/chat', async (req, res) => {
     const { sessionId, message } = req.body;
     if (!sessionId || !message) {
       return res.status(400).json({ error: 'Missing sessionId or message' });
+    }
+    if (!mongoose.Types.ObjectId.isValid(sessionId)) {
+      return res.status(400).json({ error: 'Invalid session ID format' });
     }
 
     const interview = await Interview.findById(sessionId);
@@ -233,7 +259,7 @@ app.post('/api/chat', async (req, res) => {
     }
   } catch (error) {
     console.error('Error in /api/chat:', error);
-    res.status(500).json({ error: 'Failed to send message', details: error.message });
+    res.status(500).json({ error: 'Failed to send message. Please try again.' });
   }
 });
 
@@ -246,6 +272,9 @@ app.post('/api/report', async (req, res) => {
     const { sessionId } = req.body;
     if (!sessionId) {
       return res.status(400).json({ error: 'Missing sessionId' });
+    }
+    if (!mongoose.Types.ObjectId.isValid(sessionId)) {
+      return res.status(400).json({ error: 'Invalid session ID format' });
     }
 
     const interview = await Interview.findById(sessionId);
@@ -298,7 +327,7 @@ app.post('/api/report', async (req, res) => {
     res.json(report);
   } catch (error) {
     console.error('Error in /api/report:', error);
-    res.status(500).json({ error: 'Failed to generate report', details: error.message });
+    res.status(500).json({ error: 'Failed to generate report. Please try again.' });
   }
 });
 

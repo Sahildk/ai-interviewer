@@ -119,10 +119,10 @@
 
 This project was built for the Hackathon using a modern, scalable stack:
 
-- **Frontend**: `Next.js 15` (App Router), `React 19`, `Tailwind CSS v4`, `Framer Motion` (for fluid animations).
+- **Frontend**: `Next.js 16` (App Router), `React 19`, `Tailwind CSS v4`, `Framer Motion` (for fluid animations).
 - **UI Components**: `Shadcn/UI` for a premium, accessible design system.
 - **Backend**: `Node.js` & `Express` (Separate Service) handling complex logic.
-- **AI Engine**: `Google Gemini 1.5 Flash` / `3.0 Flash Preview` via the Google GenAI SDK.
+- **AI Engine**: `Google Gemini 2.5 Flash` via the Google GenAI SDK.
 - **Database**: `MongoDB Atlas` (Mongoose ODM) for storing session history and analytics.
 - **Deployment**: Dockerized for easy deployment to Vercel or Render.
 
@@ -197,7 +197,23 @@ This project was built for the Hackathon using a modern, scalable stack:
 git clone https://github.com/sahildk/ai-interviewer.git
 cd ai-interviewer/server
 npm install
-# Create .env file with MONGO_URI, API_KEY, PORT=5000
+
+# Copy the example env file and fill in your values
+cp .env.example .env
+```
+
+Edit `server/.env` with your credentials:
+
+```env
+MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/db
+API_KEY=your_gemini_api_key_here
+PORT=5000
+FRONTEND_URL=http://localhost:3000   # your frontend origin (for CORS)
+```
+
+> ⚠️ The server will **exit immediately** on startup if `MONGO_URI` or `API_KEY` are missing.
+
+```bash
 npm start
 ```
 </details>
@@ -208,7 +224,18 @@ npm start
 ```bash
 cd ai-interviewer/frontend
 npm install
-# Create .env.local with NEXT_PUBLIC_API_URL=http://localhost:5000
+
+# Copy the example env file and fill in your values
+cp .env.local.example .env.local
+```
+
+Edit `frontend/.env.local`:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
